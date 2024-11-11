@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='panel_maestro.css') }}">
+    <title>Panel Maestro</title>
+</head>
+<body>
+    <div class="contenedor">
+        <img src="{{ url_for('static', filename='imagenes/logo.png') }}" alt="Logo" class="logo">
+        <h1>Gestión de Estudiantes</h1>
+        <div class="header-container">
+            <h2>Menú de Opciones</h2>
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+        </div>
+
+        <div id="menu" class="menu hide">
+            <div class="button-container"> <!-- Contenedor para los botones -->
+                <button class="button" onclick="location.href='/'">Cerrar Sesión</button>
+                <button class="button" onclick="location.href='/agregar_estudiante'">Agregar Estudiantes</button>
+                <button class="button" onclick="location.href='/agregar_semanas'">Agregar Semanas</button>
+                <button class="button" onclick="location.href='/agregar_notas'">Agregar Notas</button>
+                <button class="button" onclick="location.href='/agregar_encuentro'">Agregar Encuentro</button>
+                <button class="button" onclick="location.href='/agregar_informe'">Agregar Informe</button>
+                <button class="button" onclick="location.href='/consultas'">Consultar</button>
+                <button class="button" onclick="location.href='/eliminar'">Eliminar</button>
+                <button class="button" onclick="location.href='/actualizar_estudiantes'">Actualizar Estudiantes</button>
+                <button class="button" onclick="location.href='/archivos_registrados'">Subir Archivos</button>
+                <button class="button" onclick="location.href='/mostrar_tabla'">Mostrar Tabla</button>
+            </div>
+        </div>
+        
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('menu');
+                menu.classList.toggle('show');
+            }
+        </script>
+    </div>
+</body>
+</html>
+

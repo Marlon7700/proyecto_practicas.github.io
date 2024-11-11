@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('imagenes/imagen_login.jpeg'); /* Cambia esto por la ruta de tu imagen */
+  background-size: cover; /* Hace que la imagen cubra todo el fondo */
+  background-position: center; /* Centra la imagen */
+  color: #17202a;
+  text-align: center;
+  height: 100vh; /* Asegura que el fondo cubra toda la pantalla */
+  display: flex; /* Centra el contenedor */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.contenedor {
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9); /* Fondo blanco con un poco de transparencia */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  transition: transform 0.3s ease; /* Suave transformación */
+}
+
+.contenedor:hover {
+  transform: scale(1.05); /* Escala el contenedor al pasar el mouse */
+}
+
+.logo {
+  width: 100%; /* Ajustar al 100% del contenedor */
+  height: auto; /* Mantener la proporción */
+  margin-bottom: 20px; /* Espacio debajo del logo */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border 0.3s ease; /* Suave transición en el borde */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #0056b3; /* Color del borde al enfocar */
+  outline: none; /* Quita el contorno */
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; /* Aumentar tamaño de texto */
+  transition: background-color 0.3s ease; /* Suave transición en el color de fondo */
+}
+
+button:hover {
+  background-color: #004494;
+}
+
+p {
+  margin-top: 15px;
+}
+
+ul {
+  list-style: none;
+  margin: 10px 0;
+}
+
+ul li {
+  color: red; /* Color para mensajes de error */
+}
+
+ul li.success {
+  color: green; /* Color para mensajes de éxito */
+}
+

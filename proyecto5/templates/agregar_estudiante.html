@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='agregar_estudiante.css') }}">
+    <title>Agregar Estudiante</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="header">
+            <img src="{{ url_for('static', filename='imagenes/logo.png') }}" alt="Logo" class="logo">
+        </div>
+        <h1>Agregar Estudiante</h1>
+        <form method="post">
+            <div class="form-group">
+                <div>
+                    <label for="cedula_estudiante">CEDULA ESTUDIANTE:</label>
+                    <input type="text" id="cedula_estudiante" name="cedula_estudiante" required pattern="\d*">
+                </div>
+                
+                <div>
+                    <label for="nombre">NOMBRE:</label>
+                    <input type="text" id="nombres" name="nombres" required>
+                </div>
+                <div>
+                    <label for="apellido">APELLIDO:</label>
+                    <input type="text" id="apellidos" name="apellidos" required>
+                </div>
+                <div>
+                    <label for="telefono">TELEFONO:</label>
+                    <input type="text" id="telefono" name="telefono" required>
+                </div>
+                <div>
+                    <label for="correo">CORREO:</label>
+                    <input type="text" id="correo" name="correo" required>
+                </div>
+                <div>
+                    <label for="Nombre_Tutor_Academico">NOMBRE TUTOR ACADEMICO:</label>
+                    <input type="text" id="Nombre_Tutor_Academico" name="Nombre_Tutor_Academico" required>
+                </div>
+                <div>
+                    <label for="Nombre_Tutor_Empresarial">NOMBRE TUTOR EMPRESARIAL:</label>
+                    <input type="text" id="Nombre_Tutor_Empresarial" name="Nombre_Tutor_Empresarial" required>
+                </div>
+                <div>
+                    <label for="Nombre_Empresa">NOMBRE EMPRESA:</label>
+                    <input type="text" id="Nombre_Empresa" name="Nombre_Empresa" required>
+                </div>
+            </div>
+            <div class="buttons">
+                <button type="submit">GUARDAR</button>
+            </div>
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <div class="buttons">
+            <button onclick="location.href='/panel_maestro'">ATRAS</button>
+            <button onclick="location.href='/agregar_estudiante'">GUARDAR</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

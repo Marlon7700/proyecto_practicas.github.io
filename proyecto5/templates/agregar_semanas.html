@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='agregar_semanas.css') }}">
+    <title>Registro de Semana</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="{{ url_for('static', filename='imagenes/logo.png') }}" alt="Logo Universidad" class="logo">
+        </div>
+        <h2>Registro de Semana</h2>
+        
+        <!-- Formulario de registro de semana -->
+        <form method="POST" action="{{ url_for('agregar_semanas') }}">
+            <div class="form-group">
+                <label for="fecha_inicio">Fecha de Inicio:</label>
+                <input type="date" id="fecha_inicio" name="fecha_inicio" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha_final">Fecha de Fin:</label>
+                <input type="date" id="fecha_final" name="fecha_final" required>
+            </div>
+            <div class="form-group">
+                <label for="cedula_estudiante">Cédula del Estudiante:</label>
+                <input type="text" id="cedula_estudiante" name="cedula_estudiante" required>
+            </div>
+            <div class="form-group">
+                <label for="horas_registradas">Horas Registradas:</label>
+                <input type="number" id="horas_registradas" name="horas_registradas" required>
+            </div>
+            <div class="form-group">
+                <label for="nota_tutor_academico">Nota del Tutor Académico:</label>
+                <input type="number" id="nota_tutor_academico" name="nota_tutor_academico" required>
+            </div>
+            <div class="form-group">
+                <label for="numero_semana">Número de Semana:</label>
+                <input type="number" id="numero_semana" name="numero_semana" required>
+            </div>
+            <div class="form-group">
+                <label for="numero_informe">Número de Informe:</label>
+                <input type="number" id="numero_informe" name="numero_informe" required>
+            </div>
+            
+            <div class="form-buttons">
+                <button type="submit" class="btn">GUARDAR</button>
+                <button type="reset" class="btn" onclick="location.href='/panel_maestro'">ATRAS</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('imagenes/imagen_login.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px 40px 60px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(180, 13, 13, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 2s, borderGlow 3s ease-in-out infinite alternate; /* Añadimos la animación del borde */
+    width: 100%;
+}
+
+/* Animación del borde resplandeciente */
+@keyframes borderGlow {
+    0% {
+        border: 3px solid rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        border: 3px solid #1fb408; /* Cambia a verde brillante */
+    }
+    100% {
+        border: 3px solid rgba(255, 255, 255, 0.5); /* Vuelve al borde original */
+    }
+}
+
+.contenedor .logo {
+    width: 100%; /* Ajusta el tamaño del logo a tu gusto */
+    height: auto; /* Mantiene la proporción original */
+    margin-bottom: 30px; /* Espaciado debajo del logo */
+    animation: bounce 2s ease-in-out infinite; /* Animación del logo de salto */
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: #333;
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+.grupo-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 22px;
+    margin-right: 10px;
+    display: inline-block;
+    min-width: 120px;
+}
+
+.input-codigo {
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    width: 60%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.input-codigo:focus {
+    border-color: #5cb85c;
+    outline: none;
+}
+
+.boton-consultar {
+    padding: 12px 30px;
+    background-color: #1fb408;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+.boton-consultar:hover {
+    background-color: #0fb446;
+}
+
+.mensaje {
+    margin-top: 15px;
+    color: #101010;
+    font-size: 16px;
+}
+
+.btn-salir {
+    background-color: #d9534f;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 40px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.btn-salir:hover {
+    background-color: #c9302c;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif; /* Tipo de fuente */
+    background-image: url('imagenes/imagen_login.jpeg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Asegura que el fondo cubra toda la altura de la pantalla */
+}
+
+.contenedor {
+    max-width: 600px; /* Máxima anchura */
+    margin: 50px auto; /* Centrando en el medio */
+    padding: 80px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 50px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Centrando texto */
+}
+
+h1 {
+    color: #333; /* Color del texto */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.form-consulta {
+    display: flex;
+    flex-direction: column; /* Organizando verticalmente */
+    margin-bottom: 20px; /* Espaciado inferior del formulario */
+}
+
+label {
+    margin-bottom: 8px; /* Espaciado debajo del label */
+    font-weight: bold; /* Negrita para el label */
+}
+
+.input-codigo {
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 40px; /* Bordes redondeados */
+    margin-bottom: 20px; /* Espaciado entre el input y el botón */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: border-color 0.3s; /* Transición para cambio de color */
+}
+
+.input-codigo:focus {
+    border-color: #5cb85c; /* Color verde al enfocar */
+    outline: none; /* Sin contorno al enfocar */
+}
+
+.boton-consultar {
+    background-color: #5cb85c; /* Color verde */
+    border: none; /* Sin borde */
+    color: rgb(168, 54, 54); /* Texto blanco */
+    padding: 40px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    display: flex; /* Flex para centrar la imagen */
+    justify-content: center; /* Centrar contenido */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.boton-consultar:hover {
+    background-color: #4cae4c; /* Color más oscuro al pasar el ratón */
+}
+
+.mensaje {
+    margin-top: 15px; /* Espaciado superior */
+    color: #d9534f; /* Color rojo para errores */
+}
+
+.btn-salir {
+    background-color: #d9534f; /* Color rojo */
+    border: none; /* Sin borde */
+    color: white; /* Texto blanco */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    width: 100%; /* Ancho completo */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.btn-salir:hover {
+    background-color: #c9302c; /* Color más oscuro al pasar el ratón */
+}

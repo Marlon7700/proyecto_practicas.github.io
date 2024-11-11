@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='agregar_estudiante.css') }}">
+    <title>Agregar Encuentro</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="header">
+            <img src="{{ url_for('static', filename='imagenes/logo.png') }}" alt="Logo" class="logo">
+        </div>
+        <h1>Agregar Encuentro</h1>
+        <form method="post">
+            <div class="form-group">
+                <div>
+                    <label for="cedula_estudiante">CEDULA ESTUDIANTE:</label>
+                    <input type="text" id="cedula_estudiante" name="cedula_estudiante" required pattern="\d*">
+                </div>
+                <div>
+                    <label for="numero_encuentro">NUMERO DE ENCUENTRO:</label>
+                    <input type="text" id="numero_encuentro" name="numero_encuentro" required pattern="\d*">
+                </div>
+                <div>
+                    <label for="nota_encuentro">NOTA DE ENCUENTRO:</label>
+                    <input type="text" id="nota_encuentro" name="nota_encuentro" required>
+                </div>
+            </div>
+            <div class="buttons">
+                <button type="submit">GUARDAR</button>
+            </div>
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <div class="buttons">
+            <button onclick="location.href='/panel_maestro'">ATRAS</button>
+            <button onclick="location.href='/agregar_encuentro'">GUARDAR</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+body {
+  margin: 10px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('imagenes/imagen_login.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(1.05);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+.contenedor {
+  background-color: rgba(19, 161, 76, 0.8);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  animation: slideIn 1s;
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(-50px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-right: 10px; /* Espacio entre el h2 y el botón */
+  font-family: Arial, sans-serif;
+}
+
+.logo {
+  width: 100%; /* Ajusta el tamaño según sea necesario */
+  animation: bounce 1s ease infinite; /* Aplica animación de rebote de forma infinita */
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-10px); /* Ajusta la altura del rebote */
+  }
+  60% {
+      transform: translateY(-5px);
+  }
+}
+
+.hamburger {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.hamburger:hover {
+  background-color: #0056b3;
+}
+
+.menu {
+  display: none; /* Oculta el menú por defecto */
+  flex-direction: column; /* Para apilar los botones verticalmente */
+  align-items: center; /* Centra los botones horizontalmente */
+  margin-top: 10px;
+}
+
+.menu.show {
+  display: flex; /* Muestra el menú cuando se activa */
+  animation: fadeIn 0.5s; /* Añade un efecto de aparición */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: center; /* Para apilar los botones verticalmente */
+  align-items: center; /* Centra los botones horizontalmente */
+  justify-content: center; /* Centra los botones verticalmente */
+  margin-top: 20px; /* Espacio superior para el contenedor */
+}
+
+.button {
+  margin: 10px 5px; /* Espacio alrededor de cada botón */
+  padding: 20px 5px; /* Espacio interno de cada botón */
+  border: column; /* Elimina el borde */
+  border-radius: 60px; /* Bordes redondeados */
+  background-color: #008cff; /* Color de fondo */
+  color: white; /* Color del texto */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s; /* Suaviza el cambio de color */
+}
+
+.button:hover {
+  background-color: #195799; /* Cambia el color de fondo al pasar el ratón */
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='agregar_notas.css') }}">
+    <title>Agregar Evaluación</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="{{ url_for('static', filename='imagenes/logo.png') }}" alt="Logo" class="logo-universidad">
+            <img src="{{ url_for('static', filename='imagenes/logo_pro.jpeg') }}" alt="Logo Programa" class="logo-programa">
+        </div>
+        <h2>Agregar Evaluación</h2>
+        <form method="post">
+            <div class="form-group">
+                <div>
+                    <label for="cedula_estudiante">CÉDULA ESTUDIANTE:</label>
+                    <input type="text" id="cedula_estudiante" name="cedula_estudiante" required>
+                </div>
+                <div>
+                    <label for="autoevaluacion_tutor_academico">AUTOEVALUACIÓN TUTOR ACADÉMICO:</label>
+                    <input type="checkbox" id="autoevaluacion_tutor_academico" name="autoevaluacion_tutor_academico" value="1">
+                </div>
+                <div>
+                    <label for="certifiacion_practica">CERTIFICACIÓN PRÁCTICA:</label>
+                    <input type="checkbox" id="certifiacion_practica" name="certifiacion_practica" value="1">
+                </div>
+                <div>
+                    <label for="evaluacion_estudiante_tutor">EVALUACIÓN ESTUDIANTE POR TUTOR:</label>
+                    <input type="checkbox" id="evaluacion_estudiante_tutor" name="evaluacion_estudiante_tutor" value="1">
+                </div>
+                <div>
+                    <label for="evaluacion_tutor_empresarial">EVALUACIÓN TUTOR EMPRESARIAL:</label>
+                    <input type="text" id="evaluacion_tutor_empresarial" name="evaluacion_tutor_empresarial" required>
+                </div>
+            </div>
+            <div class="buttons">
+                <button type="submit">GUARDAR</button>
+            </div>
+        </form>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        
+        <div class="buttons">
+            <button onclick="location.href='/panel_maestro'">Cerrar Sesión</button>
+            <button onclick="location.href='/'">Consultar</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

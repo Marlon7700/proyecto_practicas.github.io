@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Estudiantes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mostrar_tabla.css') }}">
+</head>
+<body>
+    <h1>Lista de Estudiantes</h1>
+    
+    {% if estudiantes %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Cédula</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Tutor Académico</th>
+                    <th>Tutor Empresarial</th>
+                    <th>Empresa</th>
+                    <th>Total Horas</th>
+                    <th>Promedio Nota Tutor Académico</th>
+                    <th>Promedio Nota Encuentros</th>
+                    <th>Calificación Escenario</th>
+                    <th>Promedio Nota Sustentación</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for estudiante in estudiantes %}
+                    <tr>
+                        <td>{{ estudiante[0] }}</td>
+                        <td>{{ estudiante[1] }}</td>
+                        <td>{{ estudiante[2] }}</td>
+                        <td>{{ estudiante[3] }}</td>
+                        <td>{{ estudiante[4] }}</td>
+                        <td>{{ estudiante[5] }}</td>
+                        <td>{{ estudiante[6] }}</td>
+                        <td>{{ estudiante[7] }}</td>
+                        <td>{{ estudiante[8] }}</td>
+                        <td>{{ estudiante[9] }}</td>
+                        <td>{{ estudiante[10] }}</td>
+                        <td>{{ estudiante[11] }}</td>
+                        <td>{{ estudiante[12] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No hay estudiantes registrados.</p>
+    {% endif %}
+</body>
+</html>
+

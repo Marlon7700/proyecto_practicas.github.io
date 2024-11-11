@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Estudiante</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='eliminar.css') }}">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Consultar Código</h1>
+        <form action="/eliminar" method="post" class="form-eliminar">
+            <label for="codigo">CÓDIGO.E:</label>
+            <input type="text" id="codigo" name="codigo" required class="input-codigo">
+            <button type="submit" class="boton-eliminar">
+                <img src="{{ url_for('static', filename='imagen_boton.png') }}" alt="eliminar" class="button-image">
+            </button>
+        </form>
+        
+        <!-- Mostrar mensajes de éxito o error usando flash -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="mensaje">
+                    {% for category, message in messages %}
+                        <p class="{{ category }}">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        <button onclick="location.href='/panel_maestro'" type="button" class="btn-salir">ATRÁS</button>
+    </div>
+</body>
+</html>

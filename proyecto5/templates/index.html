@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+    <link rel="icon" href="./static/imagenes/logo.png" type="image/x-icon">
+    <title>Inicio de Sesión</title>
+</head>
+<body>
+    <div class="contenedor">
+        <img src="{{ url_for('static', filename='imagenes/logo.png') }}" alt="Logo" class="logo">
+        <h2>Inicio de Sesión</h2>
+        <form action="/" method="POST">
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Acceder</button>
+        </form>
+        <p><a href="/registro">Crear Usuario</a></p>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
+
+
+
+

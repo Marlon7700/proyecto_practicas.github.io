@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Archivos Registrados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='archivos_registrados.css') }}">
+</head>
+<body>
+    <h1>Archivos Registrados</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="archivo">
+        <input type="submit" value="Subir Archivo">
+    </form>
+
+    <ul>
+        {% for archivo in archivos %}
+            <li>
+                {{ archivo }}
+                <a href="{{ url_for('descargar_archivo', nombre_archivo=archivo) }}">Descargar</a>
+                <form action="{{ url_for('eliminar_archivo', nombre_archivo=archivo) }}" method="post" style="display:inline;">
+                    <button type="submit">Eliminar</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de la Consulta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='resultados.css') }}">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Resultados de la Consulta</h1>
+        {% if mensaje %}
+            <p>{{ mensaje }}</p>
+        {% endif %}
+        
+        {% if estudiante %}
+        <table>
+            <tr>
+                <th>Cédula</th>
+                <td>{{ estudiante.cedula_estudiante }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ estudiante.nombres }}</td>
+            </tr>
+            <tr>
+                <th>Apellido</th>
+                <td>{{ estudiante.apellidos }}</td>
+            </tr>
+            <tr>
+                <th>Teléfono</th>
+                <td>{{ estudiante.telefono }}</td>
+            </tr>
+            <tr>
+                <th>Correo</th>
+                <td>{{ estudiante.correo }}</td>
+            </tr>
+            <tr>
+                <th>Tutor Académico</th>
+                <td>{{ estudiante.Nombre_Tutor_Academico }}</td>
+            </tr>
+            <tr>
+                <th>Tutor Empresarial</th>
+                <td>{{ estudiante.Nombre_Tutor_Empresarial }}</td>
+            </tr>
+            <tr>
+                <th>Empresa</th>
+                <td>{{ estudiante.Nombre_Empresa }}</td>
+            </tr>
+            <tr>
+                <th>Horas Totales</th>
+                <td>{{ estudiante.horas_totales }}</td>
+            </tr>
+            <tr>
+                <th>Promedio Nota Tutor Académico</th>
+                <td>{{ estudiante.promedio_nota_tutor_academico }}</td>
+            </tr>
+            <tr>
+                <th>Promedio Nota Encuentro</th>
+                <td>{{ estudiante.promedio_nota_encuentro }}</td>
+            </tr>
+            <tr>
+                <th>Promedio Nota Sustentación</th>
+                <td>{{ estudiante.promedio_nota_sustentacion }}</td>
+            </tr>
+            <tr>
+                <th>Evaluación Tutor Empresarial</th>
+                <td>{{ estudiante.evaluacion_tutor_empresarial }}</td>
+            </tr>
+        </table>
+        {% endif %}
+        <a href="/consultas" class="btn-salir">ATRAS</a>
+    </div>
+</body>
+</html>

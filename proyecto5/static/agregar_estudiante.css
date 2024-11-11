@@ -1,0 +1,128 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 50px; /* Remove margin for full viewport height */
+  background-image: url('imagenes/imagen_login.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1200px;
+  background-color: rgba(248, 247, 247, 0.9); /* Added opacity */
+  padding: 60px;
+  border-radius: 50px;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: center; /* Center the logo */
+  margin-bottom: 50px;
+  background-color: rgba(46, 125, 50, 0.9); /* Slightly transparent background */
+  color: rgb(34, 85, 64);
+  padding: 30px;
+  border-radius: 50px;
+  opacity: 0; /* Start hidden */
+  transform: translateY(-50px); /* Initial displacement */
+  animation: appear 0.5s forwards; /* Fade in effect */
+}
+
+@keyframes appear {
+  to {
+    opacity: 1; /* Final visible state */
+    transform: translateY(0); /* Reset position */
+  }
+}
+
+.header img {
+  max-width: 250px; /* Max logo size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.form-group > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group label {
+  font-size: 16px;
+  margin-bottom: 5px; /* Adjusted for better spacing */
+  text-align: center;
+}
+
+.form-group input[type="text"] {
+  width: 60%;
+  max-width: 250px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid #ccc;
+  font-size: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Adjusted gap */
+  margin-top: 40px;
+}
+
+.buttons button {
+  background-color: #1d973c;
+  color: white;
+  padding: 15px 20px; /* Adjusted padding */
+  border: center;
+  border-radius: 50px;
+  font-size: 18px; /* Slightly smaller font */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #1b5e20;
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column; /* Change to column on mobile */
+    padding: 20px; /* Adjust padding */
+  }
+
+  .form-group {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+
+  .buttons {
+    flex-direction: center; /* Stack buttons on mobile */
+    gap: 20px; /* Adjust gap */
+  }
+
+  .contenedor {
+    padding: 30px; /* Less padding on mobile */
+  }
+
+  h1 {
+    margin-bottom: 30px; /* Less space below heading */
+  }
+}

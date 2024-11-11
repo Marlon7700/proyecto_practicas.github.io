@@ -1,0 +1,165 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 50px;
+  background-image: url('imagenes/imagen_login.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  background-color: #f8f7f7;
+  padding: 60px;
+  border-radius: 50px;
+  box-shadow: 8px 5px 7px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  align-items: flex;
+  justify-content: center; /* Cambiado a centrar ambos logos */
+  margin-bottom: 50px;
+  background-color: #2e7d32;
+  color: rgb(34, 85, 64);
+  padding: 30px;
+  border-radius: 50px;
+  opacity: 0; /* Comienza oculto */
+  transform: translateY(-50px); /* Desplazamiento inicial */
+  animation: appear 0.5s forwards; /* Animación de aparición */
+}
+
+@keyframes appear {
+  to {
+    opacity: 1; /* Finaliza visible */
+    transform: translateY(0); /* Finaliza en su posición original */
+  }
+}
+
+.header img {
+  margin: 0 10px; /* Espacio entre los logos */
+  max-width: 250px; /* Ajustado para pantallas más pequeñas */
+  height: center;
+  transition: transform 0.1s ease; /* Animación de transformación */
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: center;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.form-group > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group label {
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group input[type="text"] {
+  width: 60%;
+  max-width: 250px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid #ccc;
+  font-size: 20px;
+}
+
+.observations {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.observations label {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.observations textarea {
+  width: 100%;
+  max-width: 600px;
+  height: 100px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  font-size: 16px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 30px;
+}
+
+.buttons button {
+  background-color: #1d973c;
+  color: white;
+  padding: 22px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #1b5e20;
+}
+
+.logo-programa {
+  max-width: 50px; /* Ajustado para un tamaño más pequeño */
+  height: auto; /* Mantiene la proporción de la imagen */
+  margin-left: 25px; /* Espacio a la izquierda si es necesario */
+}
+
+/* Consultas de medios para pantallas pequeñas */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column; /* Cambia a columna en móviles */
+    align-items: center; /* Centra los logos en móviles */
+    padding: 20px; /* Ajustar padding para móviles */
+  }
+
+  .header img {
+    max-width: 20px; /* Ajuste del tamaño de los logos en móviles */
+  }
+
+  .form-group {
+    grid-template-columns: 1fr; /* Una sola columna en móviles */
+  }
+
+  .buttons {
+    flex-direction: column; /* Botones en columna en móviles */
+    gap: 20px; /* Espacio entre botones en móviles */
+  }
+
+  .container {
+    padding: 15px; /* Menos padding en móviles */
+  }
+
+  h2 {
+    margin-bottom: 400px; /* Reducido para móviles */
+  }
+}
